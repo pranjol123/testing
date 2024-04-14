@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      text-align: center;
+      font-size: 20px;
+    }
+  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='forum.css') }}">
+</head>
+<body>
+  <div>
+    <h4>Welcome {{ user_name }}</h4>
+  </div>
+  <div class="header">
+    <form id="login-form" method="POST">
+      <div class="customer-header">
+        <a href="{{ url_for('.subscription') }}" class="customer-header-item">Subscription Area</a>
+        <span class="space"></span>
+        <a href="{{ url_for('.query_area') }}">Query Area</a>
+        <span class="passSpace"></span>
+        <a href="{{ url_for('.logout') }}">Logout</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

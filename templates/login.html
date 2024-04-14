@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div id="login-frame">
+        <h1>Welcome to My Music</h1>
+        <form id="login-form" method="POST" action="{{ url_for('.login') }}">
+            <div id="user">
+                <label for="Username">Email:</label>
+                <input type="text" name="user" class="textbox"/>
+            </div>
+            <div id="pwd">
+                <label for="Password">Password:</label>
+                <input type="password" name="password" class="textbox" />
+            </div>
+            <button type="submit" id="submit">Login</button>
+        </form>
+        <p><a href="{{ url_for('.register') }}">Register</a></p>
+        <label id="invalid" name="invalid">{{invalid}}</label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+  <title>Task 2.1</title>
+  <body>
+    <div>
+      <table>
+        <tr>
+          <th>Time Ref</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          {% for result in results %}
+          <td>{{result.time_ref}}</td>
+          &nbsp
+          <td>{{result.value}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

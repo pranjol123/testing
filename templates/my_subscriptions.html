@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='all_posts.css') }}">
+  <style>
+    body {
+      text-align: center;
+    }
+    label {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="{{ url_for('.back') }}"><h4>{{user_name}}</h4></a>
+  </div>
+  <form id="message-form" method="POST" action="{{ url_for('.remove') }}">
+    <ul>
+      {% if posts == '' %}
+      <p>No Subscription</p>
+      {% else %} {% for post in posts['Items'] %}
+      <br>
+      <li>
+        <br>
+        <label><b>Title:</b> {{ post['title']}}</label>
+        <br>
+        <label><b>Artist:</b> {{ post['artist']}}</label>
+        <br>
+        <label><b>Year: </b> {{ post['year']}}</label>
+        <input type="hidden" name="title" value="{{ post['title'] }}">
+        &nbsp &nbsp &nbsp &nbsp;
+        <button type="submit" id="submit">Remove</button>
+      </li>
+      {% endfor %} {% endif %}
+    </ul>
+  </form>
+</body>
+</html>

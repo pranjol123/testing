@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='all_posts.css') }}" />
+  <style>
+    body {
+      text-align: center;
+    }
+    #submit {
+      background-color: #4c6baf;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="{{ url_for('.back') }}"><h4>Hi, {{user_name}}</h4></a>
+  </div>
+  <div>
+    <form id="login-form" method="POST" action="{{ url_for('.query_music') }}">
+      <label for="Password">Title:</label>
+      <input type="text" name="title" class="textbox" />
+      &nbsp;&nbsp;
+      <label for="Password">Year:</label>
+      <input type="text" name="year" class="textbox" />
+      &nbsp;&nbsp;
+      <label for="Password">Artist:</label>
+      <input type="text" name="artist" class="textbox" />
+      &nbsp;&nbsp;
+      <button type="submit" id="submit">Query</button>
+    </form>
+  </div>
+  <div>
+    <form id="message-form" method="POST" action="{{ url_for('.subscribe') }}">
+      <ul>
+        {% if posts %}
+          {% for post in posts %}
+          <li>
+            <img src="{{ post['img_url'] }}" alt="image" style="width: 80px; height: 80px" />
+            <br />
+            <label><b>Title:</b> {{ post['title'] }}</label>
+            <br />
+            <label><b>Artist:</b> {{ post['artist'] }}</label>
+            <br />
+            <label><b>Year:</b> {{ post['year'] }}</label>
+            &nbsp;
+            <div>
+              <input type="hidden" name="title" value="{{ post['title'] }}"></input>
+              <input type="hidden" name="artist" value="{{ post['artist'] }}"></input>
+              <input type="hidden" name="year" value="{{ post['year'] }}"></input>
+              <button type="submit" id="submit">Subscribe</button>
+            </div>
+          </li>
+          {% endfor %}
+        {% else %}
+          <p>No result is retrieved. Please query again</p>
+        {% endif %}
+      </ul>
+    </form>
+  </div>
+</body>
+</html>

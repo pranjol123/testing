@@ -1,0 +1,55 @@
+.head {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.space {
+  display: inline-block;
+  width: 2%;
+}
+
+.passSpace {
+  display: inline-block;
+  width: 2%;
+}
+
+.logoutSpace {
+  display: inline-block;
+  width: 5%;
+}
+
+.customer-header {
+  overflow: hidden;
+  display: inline-block;
+  background-color: #f2f2f2;
+  width: auto;
+  box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
+}
+
+.customer-header a {
+  float: left;
+  color: #007bff;
+  padding: 17px 12px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.customer-header a:hover {
+  background-color: #7345a0;
+  color: #0056b3;
+}
+
+.customer-header a.customer-header-item {
+  background-color: #4c6baf; /* Matched button background color with login */
+  color: #ffffff; /* Matched button text color with login */
+  margin-left: 2%;
+}
+
+a.customer-header-item:hover {
+  background-color: #7345a0; /* Changed hover background color to match login */
+}
+
+.customer-header-item {
+  height: 20px;
+}
